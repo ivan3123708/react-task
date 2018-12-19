@@ -2,19 +2,19 @@ import { StoreState } from '../store/configureStore';
 import { Action } from '../actions/types';
 
 const initialState: StoreState = {
-  hotel: {}
+  reviews: []
 }
 
-const hotelReducer = (state: StoreState = initialState, action: Action): StoreState => {
+const reviewsReducer = (state: StoreState = initialState, action: Action): StoreState => {
   switch (action.type) {
-    case 'GET_HOTEL':
+    case 'GET_REVIEWS':
       return {
         ...state,
-        hotel: action.hotel.data
+        reviews: action.reviews
       }
     default:
       return state;
   }
 }
 
-export default hotelReducer;
+export default reviewsReducer;
