@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-  "outDir": "./public/dist/",
-  "sourceMap": true,
-  "strictNullChecks": true,
-  "module": "es6",
-  "moduleResolution": "node",
-  "jsx": "react",
-  "target": "es5",
-  "allowJs": true
-    },
+    "outDir": "./public/dist/",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "target": "es5",
+    "allowJs": true,
+    "lib": ["dom", "esnext"]
+  },
   "include": [
-      "./src/**/*"
-    ],
+    "./src/**/*"
+  ],
   "exclude": [
-      "node_modules"
-    ]
+    "node_modules"
+  ]
 }

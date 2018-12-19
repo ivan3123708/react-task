@@ -1,8 +1,8 @@
 import { StoreState } from '../store/configureStore';
-import { Action } from '../actions/types';
+import { Action } from '../actions';
 
 const initialState: StoreState = {
-  reviews: []
+  reviews: null
 }
 
 const reviewsReducer = (state: StoreState = initialState, action: Action): StoreState => {

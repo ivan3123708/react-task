@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from '../sagas';
 import hotelReducer from '../reducers/hotelReducer';
 import reviewsReducer from '../reducers/reviewsReducer';
 
@@ -12,9 +13,11 @@ const rootReducer = combineReducers({
 
 export interface StoreState {
   hotel?: any,
-  reviews?: any[]
+  reviews?: any
 };
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
+sagaMiddleware.run(rootSaga);
 
 export default store;
