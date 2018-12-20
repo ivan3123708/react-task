@@ -25,15 +25,17 @@ class HotelDetails extends React.Component<IHotelDetailsProps, {}> {
 
     return (
       <div className="hotel">
-        <h1 className="hotel-name">{hotel.hotel.name}</h1>
+        <h3 className="hotel-name">{hotel.hotel.name}</h3>
         <div className="hotel-details">
-          <img src={hotel.hotel.images && hotel.hotel.images[0]} />
-          <p>{hotel.hotel.name}</p>
-          <p>{hotel.hotel.address}</p>
-          <p>{hotel.hotel.review_stats.average_score}</p>
+          <img className="photo" src={hotel.hotel.images && hotel.hotel.images[0]} />
+          <div className="info">
+            <p>{hotel.hotel.name}</p>
+            <p>{hotel.hotel.address}</p>
+          </div>
+          <p className="score">{hotel.hotel.review_stats.average_score}</p>
         </div>
         <div className="hotel-reviews">
-          <h2>Reviews</h2>
+          <h3>Reviews</h3>
           {reviews.reviews.map((review) => <p key={review.id}>{review.title}</p>)}
         </div>
       </div>
